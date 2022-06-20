@@ -1,21 +1,23 @@
 import express from 'express';
-import { PrismaClient, Prisma } from '@prisma/client';
+import {PrismaClient, Prisma} from '@prisma/client';
+import cors from 'cors';
 
 const app = express();
 const port = 4000;
 const prisma = new PrismaClient();
 
+app.use(cors());
 app.use(express.json())
 
 app.get('/policies', async (req, res) => {
-  const { search } = req.query;
+  const {search} = req.query;
 
   const or: Prisma.PolicyWhereInput = search
     ? {
       OR: [
-        { provider: { contains: search as string, mode: 'insensitive' } },
-        { customer: { firstName: { contains: search as string, mode: 'insensitive' } } },
-        { customer: { lastName: { contains: search as string, mode: 'insensitive' } } }
+        {provider: {contains: search as string, mode: 'insensitive'}},
+        {customer: {firstName: {contains: search as string, mode: 'insensitive'}}},
+        {customer: {lastName: {contains: search as string, mode: 'insensitive'}}}
       ],
     }
     : {};
