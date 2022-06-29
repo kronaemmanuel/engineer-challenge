@@ -2,9 +2,8 @@ import {QueryClient, QueryClientProvider} from "react-query";
 // TODO: remove devtools
 import {ReactQueryDevtools} from 'react-query/devtools';
 
-import Navbar from "./Navbar";
-import Header from "./Header";
-import Table from "./Table";
+import Navbar from "./components/Navbar";
+import Table from "./components/Table";
 
 import "./index.css";
 
@@ -14,7 +13,7 @@ const App = () => (
   <div>
     <Navbar />
     <div className="w-full p-8">
-      <Header />
+      <h1 className="text-3xl font-bold text-gray-900 mb-2">Policies</h1>
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools />
         <Table />

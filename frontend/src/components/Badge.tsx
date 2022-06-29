@@ -1,4 +1,4 @@
-import {Status, BadgeProps} from "./interfaces/badge.interface"
+import {Status, BadgeProps} from "../interfaces/badge.interface"
 
 const getBadgeColors = (status: Status) => {
   const badgeColors: {[k in Status]: {

@@ -2,8 +2,8 @@ import React from "react";
 import {useQuery} from "react-query";
 
 import Badge from "./Badge";
-import {getPolicies} from "./utilities/getPolicies";
-import {useFilter} from "./utilities/useFilter";
+import {getPolicies} from "../utilities/getPolicies";
+import {useFilter} from "../utilities/useFilter";
 
 const Table = () => {
   const [searchFilter, setSearchFilter] = useFilter("search", "")
