@@ -15,7 +15,7 @@ const App = () => (
     <div className="w-full p-8">
       <h1 className="text-3xl font-bold text-gray-900 mb-2">Policies</h1>
       <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools />
+        <ReactQueryDevtools initialIsOpen={false} />
         <Table />
       </QueryClientProvider>
     </div>

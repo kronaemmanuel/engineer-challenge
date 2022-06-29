@@ -1,7 +1,7 @@
 import {policy} from "../interfaces/policy.interface"
 import {filterType} from "../interfaces/filter.interface"
 
-async function getPolicies({queryKey: filters}: {queryKey: Array<filterType>}): Promise<Array<policy> | null> {
+async function getPolicies({queryKey: filters}: {queryKey: Array<filterType>}): Promise<Array<policy>> {
   try {
     let fetchUrl = "http://localhost:4000/policies?"
     for (const filter of filters) {
