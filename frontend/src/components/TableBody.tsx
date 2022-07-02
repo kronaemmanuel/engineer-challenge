@@ -6,6 +6,7 @@ interface TableBodyProps {
 }
 
 const TableBody = ({policies}: TableBodyProps) => {
+  console.log(policies)
   return (
     <tbody>
       {policies &&

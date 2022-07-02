@@ -5,7 +5,7 @@ async function getPolicies({queryKey: filters}: {queryKey: Array<filterType>}): 
   try {
     let fetchUrl = "http://localhost:4000/policies?"
     for (const filter of filters) {
-      fetchUrl = fetchUrl.concat(filter.key, "=", filter.value, "&")
+      fetchUrl = fetchUrl.concat(filter.key, "=", filter.value)
     }
     const result = await fetch(fetchUrl);
     const policies: Array<policy> = await result.json();
